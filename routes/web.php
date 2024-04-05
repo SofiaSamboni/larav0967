@@ -1,9 +1,8 @@
 <?php
-
+use App\Http\Controllers\CuerposController;
+use App\Http\Controllers\CursoController;
 use App\Http\Controllers\GatoController;
-use App\Http\Controllers\PrimoController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\TallerController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -30,7 +29,8 @@ Route::post('/frmproducto',[ProductController::class,'productoStore'])->name('pr
 Route::get('/frmgato',[GatoController::class,'formularioGato']);
 Route::post('/frmgato',[GatoController::class,'productoStore'])->name('gato.store');
 
-Route::get('/frmTaller',[TallerController::class,'formularioTaller']);
-Route::post('/frmTaller',[TallerController::class,'tallerStore'])->name('tallerStore');
 
-Route::get('/frmprimo',[PrimoController::class,'formularioPrimo']);
+Route::get('/curso/create',[CursoController::class,'create']);
+Route::post('/curso/store',[CursoController::class,'store'])->name('curso.store');
+Route::get('/cursos/listar',[CursoController::class,'index'])->name('curso.index');
+
