@@ -50,4 +50,8 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\profile');
 
     }
+
+    public function roles(){
+        return $this->belongsToMany('App\Models\Role');
+    }
 }
